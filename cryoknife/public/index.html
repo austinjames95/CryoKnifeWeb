@@ -217,7 +217,7 @@
     document.querySelector('.slider-btn.prev').addEventListener('click', function() { goTo(current - 1); resetTimer(); });
     dots.forEach(function(d, i) { d.addEventListener('click', function() { goTo(i); resetTimer(); }); });
 
-    function resetTimer() { clearInterval(timer); timer = setInterval(function() { goTo(current + 1); }, 4000); }
+    function resetTimer() { clearInterval(timer); timer = setInterval(function() { goTo(current + 1); }, 5000); }
     resetTimer();
   })();
 </script>
