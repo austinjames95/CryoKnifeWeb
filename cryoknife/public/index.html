@@ -46,15 +46,21 @@
       </div>
     </div>
     <div class="hero-figure">
-      <div class="photo hero-photo">
-        <span class="label">Hero image · clinical environment</span>
-      </div>
-      <div class="meta-strip">
-        <span>Image-guided</span>
-        <span class="divider-v"></span>
-        <span>Minimally invasive</span>
-        <span class="divider-v"></span>
-        <span>Tissue-sparing</span>
+      <div class="hero-slider">
+        <div class="slider-track">
+          <div class="slide"><img src="assets/transparent device.png" alt="CryoKnife device" width="40px" /></div>
+          <div class="slide"><img src="assets/transparent device2.png" alt="CryoKnife device detail" width="40px" /></div>
+          <div class="slide"><img src="assets/transparent device3.png" alt="CryoKnife probe" width="40px"/></div>
+          <div class="slide"><img src="assets/image3.png" alt="CryoKnife clinical environment" width="40px" /></div>
+        </div>
+        <button class="slider-btn prev" aria-label="Previous image"><img src="./assets/arrowLeft.png"></button>
+        <button class="slider-btn next" aria-label="Next image"><img src="./assets/arrowRight.png"></button>
+        <div class="slider-dots">
+          <button class="dot is-active" aria-label="Slide 1"></button>
+          <button class="dot" aria-label="Slide 2"></button>
+          <button class="dot" aria-label="Slide 3"></button>
+          <button class="dot" aria-label="Slide 4"></button>
+        </div>
       </div>
     </div>
   </section>
@@ -191,6 +197,30 @@
 <!-- ============ FOOTER ============ -->
 <footer class="site-foot" id="footer"></footer>
 <script src="site/footer-loader.js"></script>
+
+<script>
+  (function() {
+    var track = document.querySelector('.slider-track');
+    var dots = document.querySelectorAll('.slider-dots .dot');
+    var slides = document.querySelectorAll('.slide');
+    var current = 0;
+    var total = slides.length;
+    var timer;
+
+    function goTo(n) {
+      current = (n + total) % total;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach(function(d, i) { d.classList.toggle('is-active', i === current); });
+    }
+
+    document.querySelector('.slider-btn.next').addEventListener('click', function() { goTo(current + 1); resetTimer(); });
+    document.querySelector('.slider-btn.prev').addEventListener('click', function() { goTo(current - 1); resetTimer(); });
+    dots.forEach(function(d, i) { d.addEventListener('click', function() { goTo(i); resetTimer(); }); });
+
+    function resetTimer() { clearInterval(timer); timer = setInterval(function() { goTo(current + 1); }, 4000); }
+    resetTimer();
+  })();
+</script>
 
 <script>
   var observer = new IntersectionObserver(function(entries) {
