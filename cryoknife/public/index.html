@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CryoKnife — A minimally invasive alternative for pet cancer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="CryoKnife brings percutaneous, image-guided cryoablation to U.S. veterinary oncology — a minimally invasive alternative for dogs and cats with cancer." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site/styles.css" />
+<style>
+  /* ============== HOME PAGE ============== */
+  .hero {
+    padding: 96px 0 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero .container.narrow { position: relative; z-index: 2; }
+  .hero .tag {
+    margin: 0 auto 28px;
+  }
+  .hero .display { margin: 0 auto 24px; max-width: 18ch; }
+  .hero .lede { margin: 0 auto 40px; text-align: center; }
+  .hero .cta-row { justify-content: center; margin-bottom: 80px; }
+
+  .hero-figure {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 var(--gutter);
+  }
+  .hero-photo {
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    box-shadow: 0 1px 0 var(--rule), 0 30px 60px -30px rgba(7,45,68,0.25);
+  }
+  .hero-figure .meta-strip {
+    position: absolute;
+    left: 50%;
+    bottom: -32px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 14px 28px;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    box-shadow: 0 10px 30px -10px rgba(7,45,68,0.18);
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-2);
+    white-space: nowrap;
+  }
+  .hero-figure .meta-strip span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero-figure .meta-strip span::before {
+    content: "";
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .hero-figure .meta-strip .divider-v {
+    width: 1px;
+    height: 14px;
+    background: var(--rule);
+  }
+  .hero-figure .meta-strip .divider-v::before { display: none; }
+
+  /* trust strip */
+  .trust {
+    padding: 88px 0 56px;
+    text-align: center;
+  }
+  .trust .kicker { margin-bottom: 28px; }
+  .trust-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 56px;
+    flex-wrap: wrap;
+  }
+  .trust-logo {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--ink-2);
+    opacity: 0.55;
+    letter-spacing: -0.01em;
+    font-style: italic;
+  }
+
+  /* mechanism / how */
+  .mech-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: end;
+    margin-bottom: 64px;
+  }
+  .mech-head .h2 { max-width: 16ch; }
+  .mech-head .lede { margin: 0; }
+  .mech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .mech-card {
+    background: var(--paper);
+    padding: 40px 32px 48px;
+    position: relative;
+  }
+  .mech-card .step {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 80px;
+    letter-spacing: 0.14em;
+  }
+  .mech-card .h3 { margin-bottom: 12px; max-width: 14ch; }
+  .mech-card .body { margin: 0; }
+  .mech-card .num-bg {
+    position: absolute;
+    top: 28px;
+    right: 32px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 64px;
+    color: var(--rule);
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  /* comparison */
+  .compare {
+    background: var(--paper-2);
+  }
+  .compare-head {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .compare-head .h2 { margin: 16px auto 0; max-width: 20ch; }
+  .compare-table {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-row > div {
+    padding: 22px 24px;
+    border-right: 1px solid var(--rule);
+    font-size: 15px;
+    color: var(--ink-2);
+    display: flex;
+    align-items: center;
+    line-height: 1.45;
+  }
+  .compare-row > div:last-child { border-right: none; }
+  .compare-row.is-head > div {
+    background: var(--paper);
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    padding: 16px 24px;
+  }
+  .compare-row.is-head .ours { color: var(--ink); }
+  .compare-row .lhs {
+    font-family: var(--serif);
+    font-weight: 500;
+    color: var(--ink);
+    font-size: 17px;
+  }
+  .compare-row .ours {
+    background: rgba(156,205,219,0.18);
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* cta banner */
+  .cta-band {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 96px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(87,144,171,0.35) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, rgba(156,205,219,0.25) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .cta-band .container { position: relative; }
+  .cta-band-inner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .cta-band .eyebrow { color: var(--accent-2); }
+  .cta-band .eyebrow::before { background: var(--accent-2); }
+  .cta-band .h2 { color: var(--paper); margin: 20px 0 16px; max-width: 18ch; }
+  .cta-band .lede { color: rgba(250,250,247,0.75); margin: 0; }
+  .cta-band .cta-row { justify-content: flex-end; }
+  .cta-band .btn-primary { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+  .cta-band .btn-primary:hover { background: var(--accent-2); border-color: var(--accent-2); }
+  .cta-band .btn-secondary { color: var(--paper); border-color: rgba(250,250,247,0.4); }
+  .cta-band .btn-secondary:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+
+  @media (max-width: 860px) {
+    .hero { padding-top: 56px; }
+    .hero-figure .meta-strip { display: none; }
+    .mech-head, .cta-band-inner { grid-template-columns: 1fr; gap: 24px; }
+    .mech-grid { grid-template-columns: 1fr; }
+    .compare-row, .compare-row.is-head { grid-template-columns: 1fr; }
+    .compare-row > div { border-right: none; border-bottom: 1px solid var(--rule); }
+    .cta-band .cta-row { justify-content: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/cryoknife-logo.png" alt="CryoKnife" />
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="is-active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="contact.html">Request a demo</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container narrow">
+      <span class="tag">Veterinary cryoablation</span>
+      <h1 class="display">A minimally invasive alternative for <em>pet cancer.</em></h1>
+      <p class="lede">CryoKnife is an image-guided, percutaneous cryoablation system that destroys tumor tissue with controlled freeze–thaw cycles — preserving the healthy tissue around it.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="contact.html">Request a demo</a>
+        <a class="btn btn-secondary" href="#how">See how it works</a>
+      </div>
+    </div>
+    <div class="hero-figure">
+      <div class="photo hero-photo">
+        <span class="label">Hero image · clinical environment</span>
+      </div>
+      <div class="meta-strip">
+        <span>Image-guided</span>
+        <span class="divider-v"></span>
+        <span>Minimally invasive</span>
+        <span class="divider-v"></span>
+        <span>Tissue-sparing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST ============ -->
+  <section class="trust section-tight">
+    <div class="container">
+      <p class="kicker">Proven in clinical use</p>
+      <div class="trust-row">
+        <span class="trust-logo">Partner Hospital</span>
+        <span class="trust-logo">Veterinary Oncology Center</span>
+        <span class="trust-logo">Companion Animal Clinic</span>
+        <span class="trust-logo">Specialty Practice</span>
+        <span class="trust-logo">Referring Vet Group</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="section-tight" style="padding-top: 24px;">
+    <div class="container">
+      <div class="stat-row">
+        <div class="stat">
+          <div class="num">1,500<em>+</em></div>
+          <div class="lbl">Veterinary procedures performed across partner hospitals over the past two years.</div>
+        </div>
+        <div class="stat">
+          <div class="num">~70</div>
+          <div class="lbl">Specialty veterinary hospitals already trained on the system in clinical practice.</div>
+        </div>
+        <div class="stat">
+          <div class="num">$1.08<em>B</em></div>
+          <div class="lbl">Projected U.S. veterinary oncology market by 2030, growing at 12.6% CAGR.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MECHANISM ============ -->
+  <section id="how">
+    <div class="container">
+      <div class="mech-head">
+        <div>
+          <span class="eyebrow">How it works</span>
+          <h2 class="h2" style="margin-top:20px;">Three steps. One visit. Rapid recovery.</h2>
+        </div>
+        <p class="lede">A single procedure under local or general anesthesia. Real-time imaging keeps the ablation precisely on the tumor — and off the tissue you want to preserve.</p>
+      </div>
+      <div class="mech-grid">
+        <div class="mech-card">
+          <span class="num-bg">01</span>
+          <div class="step">Step one</div>
+          <h3 class="h3">Image-guided needle placement</h3>
+          <p class="body">CT or ultrasound guidance places the ablation probe percutaneously, directly into the tumor — no open surgery, no wide-margin excision.</p>
+        </div>
+        <div class="mech-card">
+          <span class="num-bg">02</span>
+          <div class="step">Step two</div>
+          <h3 class="h3">Controlled freeze–thaw cycles</h3>
+          <p class="body">A patented four-layer probe delivers a focused −150 °C zone. Ice crystals disrupt cell membranes; surrounding tissue is held at a safe temperature.</p>
+        </div>
+        <div class="mech-card">
+          <span class="num-bg">03</span>
+          <div class="step">Step three</div>
+          <h3 class="h3">Real-time margin control</h3>
+          <p class="body">The ice ball is visible on imaging throughout the procedure, so the clinician can shape the ablation around the tumor with millimeter precision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPARISON ============ -->
+  <section class="compare">
+    <div class="container">
+      <div class="compare-head">
+        <span class="eyebrow" style="justify-content:center;">Compared to current options</span>
+        <h2 class="h2">A different kind of cancer treatment.</h2>
+      </div>
+      <div class="compare-table">
+        <div class="compare-row is-head">
+          <div></div>
+          <div>Surgery</div>
+          <div>Radiation</div>
+          <div class="ours">CryoKnife</div>
+        </div>
+        <div class="compare-row">
+          <div class="lhs">Invasiveness</div>
+          <div>Open excision, wide margins</div>
+          <div>Non-invasive, repeated sessions</div>
+          <div class="ours">Percutaneous, single visit</div>
+        </div>
+        <div class="compare-row">
+          <div class="lhs">Anesthetic events</div>
+          <div>One, prolonged</div>
+          <div>Multiple over weeks</div>
+          <div class="ours">Single, often local</div>
+        </div>
+        <div class="compare-row">
+          <div class="lhs">Tissue preservation</div>
+          <div>Healthy margins removed</div>
+          <div>Cumulative tissue damage</div>
+          <div class="ours">Surrounding tissue spared</div>
+        </div>
+        <div class="compare-row">
+          <div class="lhs">Cost range*</div>
+          <div>$1,000 – $7,000+</div>
+          <div>$2,000 – $6,000+</div>
+          <div class="ours">$800 – $2,600</div>
+        </div>
+      </div>
+      <p class="kicker" style="text-align:center; margin-top: 20px;">* Indicative U.S. pricing. Final cost varies by case and partner practice.</p>
+    </div>
+  </section>
+
+  <!-- ============ CTA BAND ============ -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <span class="eyebrow">Clinical partnership</span>
+          <h2 class="h2">Bring CryoKnife into your practice.</h2>
+          <p class="lede">We install the system on-site, train your team, and stay involved through ongoing case consultation and clinical outcomes work.</p>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="contact.html">Request a demo</a>
+          <a class="btn btn-secondary" href="about.html">Read about us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-foot">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="nav-logo" href="index.html">
+          <img src="assets/cryoknife-logo.png" alt="CryoKnife" />
+        </a>
+        <p>Image-guided cryoablation for veterinary oncology. Bringing a proven minimally invasive cancer therapy to companion animals in the United States.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Site</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Inquiries</h5>
+        <ul>
+          <li><a href="contact.html">Veterinary</a></li>
+          <li><a href="contact.html">Investor</a></li>
+          <li><a href="contact.html">Press</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:hello@cryoknife.com">hello@cryoknife.com</a></li>
+          <li><a href="contact.html">Request a demo →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 CryoKnife. All rights reserved.</span>
+      <span class="legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Clinical disclosures</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

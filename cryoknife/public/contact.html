@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Contact — CryoKnife</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Contact CryoKnife — request a demo, refer a clinical case, or reach out for investor and press inquiries." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site/styles.css" />
+<link rel="stylesheet" href="site/contact.css" />
+
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/cryoknife-logo.png" alt="CryoKnife" />
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="is-active">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="contact.html">Request a demo</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact-shell">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- INTRO -->
+        <div class="contact-intro">
+          <span class="eyebrow">Contact us</span>
+          <h1 class="h1">Tell us about your <em>practice or interest.</em></h1>
+          <p class="lede">Whether you're a veterinarian considering bringing CryoKnife into your hospital, an investor exploring the U.S. expansion, or press following the technology — we read every message.</p>
+
+          <ul class="info-list">
+            <li>
+              <div class="k">General</div>
+              <div class="v"><a href="mailto:hello@cryoknife.com">hello@cryoknife.com</a></div>
+            </li>
+            <li>
+              <div class="k">Clinical partnerships</div>
+              <div class="v"><a href="mailto:clinical@cryoknife.com">clinical@cryoknife.com</a></div>
+              <div class="sub">Installation, training, and case consultation.</div>
+            </li>
+            <li>
+              <div class="k">Office</div>
+              <div class="v">United States</div>
+              <div class="sub">By appointment only — we'll share the address once your inquiry is scheduled.</div>
+            </li>
+          </ul>
+
+          <div class="response">We reply to every inquiry within two business days.</div>
+        </div>
+
+        <!-- FORM -->
+        <div class="form-card" id="formCard">
+          <h2>Send us a message</h2>
+          <p class="sub">Choose the inquiry type that best describes you — the form adapts to what we'll need from you.</p>
+
+          <form id="contactForm" novalidate>
+
+            <div class="field">
+              <label for="inquiry">I am a… <span class="req">*</span></label>
+              <select id="inquiry" name="inquiry" required>
+                <option value="vet">Veterinarian / clinical partner</option>
+                <option value="referral">Case referral (vet)</option>
+                <option value="investor">Investor</option>
+                <option value="press">Press / media</option>
+                <option value="other">Pet owner or other inquiry</option>
+              </select>
+              <div class="helper" id="helper">
+                <strong>For clinical partners:</strong> tell us roughly where you practice, what tumor types you most commonly see, and whether you have CT or ultrasound on-site.
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="firstName">First name <span class="req">*</span></label>
+                <input type="text" id="firstName" name="firstName" required autocomplete="given-name" />
+              </div>
+              <div class="field">
+                <label for="lastName">Last name <span class="req">*</span></label>
+                <input type="text" id="lastName" name="lastName" required autocomplete="family-name" />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="email">Email <span class="req">*</span></label>
+                <input type="email" id="email" name="email" required autocomplete="email" />
+              </div>
+              <div class="field">
+                <label for="org">Organization</label>
+                <input type="text" id="org" name="org" autocomplete="organization" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">How can we help? <span class="req">*</span></label>
+              <textarea id="message" name="message" required placeholder="A few lines about your practice, case, or question."></textarea>
+            </div>
+
+            <div class="consent">
+              <input type="checkbox" id="consent" name="consent" />
+              <label for="consent">I'd like to receive occasional updates about CryoKnife clinical evidence and U.S. availability. You can unsubscribe at any time. See our <a href="#">privacy policy</a>.</label>
+            </div>
+
+            <div class="form-foot">
+              <span class="note">Fields marked <span style="color:var(--accent);">*</span> are required.</span>
+              <button type="submit" class="btn btn-primary">
+                Send message
+                <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </form>
+
+          <div class="success-state">
+            <div class="check">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11l5 5 9-11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Thank you — we've got it.</h3>
+            <p>We'll be back to you within two business days. In the meantime, take a look at <a href="about.html" style="color:var(--accent);text-decoration:underline;">our story</a>.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-foot">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="nav-logo" href="index.html">
+          <img src="assets/cryoknife-logo.png" alt="CryoKnife" />
+        </a>
+        <p>Image-guided cryoablation for veterinary oncology. Bringing a proven minimally invasive cancer therapy to companion animals in the United States.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Site</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Inquiries</h5>
+        <ul>
+          <li><a href="contact.html">Veterinary</a></li>
+          <li><a href="contact.html">Investor</a></li>
+          <li><a href="contact.html">Press</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:hello@cryoknife.com">hello@cryoknife.com</a></li>
+          <li><a href="contact.html">Request a demo →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 CryoKnife. All rights reserved.</span>
+      <span class="legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Clinical disclosures</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const helperText = {
+    vet:      "<strong>For clinical partners:</strong> tell us roughly where you practice, what tumor types you most commonly see, and whether you have CT or ultrasound on-site.",
+    referral: "<strong>For case referrals:</strong> share the species, breed, age, tumor location and size, and any imaging you have available. We'll route to a clinical advisor.",
+    investor: "<strong>For investors:</strong> let us know your firm, stage focus, and whether you'd like a clinical brief or financial materials first.",
+    press:    "<strong>For press &amp; media:</strong> share your outlet, deadline, and the angle you're working on. We can also share the clinical evidence package.",
+    other:    "<strong>Pet owners &amp; other inquiries:</strong> CryoKnife is delivered through veterinary practices, but if you're searching for a partner hospital we'll do our best to point you in the right direction."
+  };
+
+  const select = document.getElementById('inquiry');
+  const helper = document.getElementById('helper');
+  select.addEventListener('change', () => {
+    helper.innerHTML = helperText[select.value] || helperText.vet;
+  });
+
+  const form = document.getElementById('contactForm');
+  const card = document.getElementById('formCard');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    card.classList.add('is-submitted');
+    window.scrollTo({ top: card.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
