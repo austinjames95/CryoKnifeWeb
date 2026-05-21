@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site/styles.css" />
+<link rel="stylesheet" href="site/footer/footer.css" />
 <link rel="stylesheet" href="site/contact.css" />
 
 </head>
@@ -62,8 +63,6 @@
               <div class="sub">By appointment only — we'll share the address once your inquiry is scheduled.</div>
             </li>
           </ul>
-
-          <div class="response">We reply to every inquiry within two business days.</div>
         </div>
 
         <!-- FORM -->
@@ -82,9 +81,6 @@
                 <option value="press">Press / media</option>
                 <option value="other">Pet owner or other inquiry</option>
               </select>
-              <div class="helper" id="helper">
-                <strong>For clinical partners:</strong> tell us roughly where you practice, what tumor types you most commonly see, and whether you have CT or ultrasound on-site.
-              </div>
             </div>
 
             <div class="field-row">
@@ -144,49 +140,8 @@
 </main>
 
 <!-- ============ FOOTER ============ -->
-<footer class="site-foot">
-  <div class="container">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a class="nav-logo" href="index.html">
-          <img src="assets/cryoknife-logo.png" alt="CryoKnife" />
-        </a>
-        <p>Image-guided cryoablation for veterinary oncology. Bringing a proven minimally invasive cancer therapy to companion animals in the United States.</p>
-      </div>
-      <div class="foot-col">
-        <h5>Site</h5>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h5>Inquiries</h5>
-        <ul>
-          <li><a href="contact.html">Veterinary</a></li>
-          <li><a href="contact.html">Investor</a></li>
-          <li><a href="contact.html">Press</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h5>Contact</h5>
-        <ul>
-          <li><a href="mailto:hello@cryoknife.com">hello@cryoknife.com</a></li>
-          <li><a href="contact.html">Request a demo →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-meta">
-      <span>© 2026 CryoKnife. All rights reserved.</span>
-      <span class="legal">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Clinical disclosures</a>
-      </span>
-    </div>
-  </div>
-</footer>
+<footer class="site-foot" id="footer"></footer>
+<script src="site/footer-loader.js"></script>
 
 <script>
   const helperText = {

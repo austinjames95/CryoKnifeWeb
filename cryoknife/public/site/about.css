@@ -15,9 +15,9 @@
     line-height: 1.03;
     letter-spacing: -0.02em;
     margin: 20px 0 0;
-    max-width: 14ch;
+    max-width: 17ch;
 }
-.page-hero .h1 em { font-style: italic; color: var(--accent); }
+.page-hero .h1 em { font-style: italic; color: var(--accent); white-space: nowrap; }
 .page-hero .lede { margin: 0; }
 
 /* ---- section pattern ---- */

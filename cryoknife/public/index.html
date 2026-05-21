@@ -9,235 +9,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site/styles.css" />
-<style>
-  /* ============== HOME PAGE ============== */
-  .hero {
-    padding: 96px 0 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero .container.narrow { position: relative; z-index: 2; }
-  .hero .tag {
-    margin: 0 auto 28px;
-  }
-  .hero .display { margin: 0 auto 24px; max-width: 18ch; }
-  .hero .lede { margin: 0 auto 40px; text-align: center; }
-  .hero .cta-row { justify-content: center; margin-bottom: 80px; }
-
-  .hero-figure {
-    position: relative;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 var(--gutter);
-  }
-  .hero-photo {
-    aspect-ratio: 16 / 9;
-    border-radius: 6px;
-    box-shadow: 0 1px 0 var(--rule), 0 30px 60px -30px rgba(7,45,68,0.25);
-  }
-  .hero-figure .meta-strip {
-    position: absolute;
-    left: 50%;
-    bottom: -32px;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 14px 28px;
-    background: var(--white);
-    border: 1px solid var(--rule);
-    border-radius: 999px;
-    box-shadow: 0 10px 30px -10px rgba(7,45,68,0.18);
-    font-family: var(--mono);
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--ink-2);
-    white-space: nowrap;
-  }
-  .hero-figure .meta-strip span {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .hero-figure .meta-strip span::before {
-    content: "";
-    width: 6px; height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-  }
-  .hero-figure .meta-strip .divider-v {
-    width: 1px;
-    height: 14px;
-    background: var(--rule);
-  }
-  .hero-figure .meta-strip .divider-v::before { display: none; }
-
-  /* trust strip */
-  .trust {
-    padding: 88px 0 56px;
-    text-align: center;
-  }
-  .trust .kicker { margin-bottom: 28px; }
-  .trust-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 56px;
-    flex-wrap: wrap;
-  }
-  .trust-logo {
-    font-family: var(--serif);
-    font-size: 18px;
-    color: var(--ink-2);
-    opacity: 0.55;
-    letter-spacing: -0.01em;
-    font-style: italic;
-  }
-
-  /* mechanism / how */
-  .mech-head {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: end;
-    margin-bottom: 64px;
-  }
-  .mech-head .h2 { max-width: 16ch; }
-  .mech-head .lede { margin: 0; }
-  .mech-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
-    border-radius: 6px;
-    overflow: hidden;
-  }
-  .mech-card {
-    background: var(--paper);
-    padding: 40px 32px 48px;
-    position: relative;
-  }
-  .mech-card .step {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--accent);
-    margin-bottom: 80px;
-    letter-spacing: 0.14em;
-  }
-  .mech-card .h3 { margin-bottom: 12px; max-width: 14ch; }
-  .mech-card .body { margin: 0; }
-  .mech-card .num-bg {
-    position: absolute;
-    top: 28px;
-    right: 32px;
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 64px;
-    color: var(--rule);
-    line-height: 1;
-    font-weight: 400;
-  }
-
-  /* comparison */
-  .compare {
-    background: var(--paper-2);
-  }
-  .compare-head {
-    text-align: center;
-    margin-bottom: 56px;
-  }
-  .compare-head .h2 { margin: 16px auto 0; max-width: 20ch; }
-  .compare-table {
-    background: var(--white);
-    border: 1px solid var(--rule);
-    border-radius: 6px;
-    overflow: hidden;
-  }
-  .compare-row {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr 1fr;
-    border-bottom: 1px solid var(--rule);
-  }
-  .compare-row:last-child { border-bottom: none; }
-  .compare-row > div {
-    padding: 22px 24px;
-    border-right: 1px solid var(--rule);
-    font-size: 15px;
-    color: var(--ink-2);
-    display: flex;
-    align-items: center;
-    line-height: 1.45;
-  }
-  .compare-row > div:last-child { border-right: none; }
-  .compare-row.is-head > div {
-    background: var(--paper);
-    font-family: var(--mono);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--muted);
-    padding: 16px 24px;
-  }
-  .compare-row.is-head .ours { color: var(--ink); }
-  .compare-row .lhs {
-    font-family: var(--serif);
-    font-weight: 500;
-    color: var(--ink);
-    font-size: 17px;
-  }
-  .compare-row .ours {
-    background: rgba(156,205,219,0.18);
-    color: var(--ink);
-    font-weight: 500;
-  }
-
-  /* cta banner */
-  .cta-band {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 96px 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-band::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse at 20% 0%, rgba(87,144,171,0.35) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 100%, rgba(156,205,219,0.25) 0%, transparent 50%);
-    pointer-events: none;
-  }
-  .cta-band .container { position: relative; }
-  .cta-band-inner {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 64px;
-    align-items: center;
-  }
-  .cta-band .eyebrow { color: var(--accent-2); }
-  .cta-band .eyebrow::before { background: var(--accent-2); }
-  .cta-band .h2 { color: var(--paper); margin: 20px 0 16px; max-width: 18ch; }
-  .cta-band .lede { color: rgba(250,250,247,0.75); margin: 0; }
-  .cta-band .cta-row { justify-content: flex-end; }
-  .cta-band .btn-primary { background: var(--paper); color: var(--ink); border-color: var(--paper); }
-  .cta-band .btn-primary:hover { background: var(--accent-2); border-color: var(--accent-2); }
-  .cta-band .btn-secondary { color: var(--paper); border-color: rgba(250,250,247,0.4); }
-  .cta-band .btn-secondary:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
-
-  @media (max-width: 860px) {
-    .hero { padding-top: 56px; }
-    .hero-figure .meta-strip { display: none; }
-    .mech-head, .cta-band-inner { grid-template-columns: 1fr; gap: 24px; }
-    .mech-grid { grid-template-columns: 1fr; }
-    .compare-row, .compare-row.is-head { grid-template-columns: 1fr; }
-    .compare-row > div { border-right: none; border-bottom: 1px solid var(--rule); }
-    .cta-band .cta-row { justify-content: flex-start; }
-  }
-</style>
+<link rel="stylesheet" href="site/index.css" />
+<link rel="stylesheet" href="site/footer/footer.css" />
 </head>
 <body>
 
@@ -265,9 +38,8 @@
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="container narrow">
-      <span class="tag">Veterinary cryoablation</span>
       <h1 class="display">A minimally invasive alternative for <em>pet cancer.</em></h1>
-      <p class="lede">CryoKnife is an image-guided, percutaneous cryoablation system that destroys tumor tissue with controlled freeze–thaw cycles — preserving the healthy tissue around it.</p>
+      <p class="lede">CryoKnife is an image-guided, percutaneous cryoablation system that destroys tumor tissue with controlled freeze thaw cycles — preserving the healthy tissue around it.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="contact.html">Request a demo</a>
         <a class="btn btn-secondary" href="#how">See how it works</a>
@@ -288,7 +60,7 @@
   </section>
 
   <!-- ============ TRUST ============ -->
-  <section class="trust section-tight">
+  <section class="trust section-tight fade-in">
     <div class="container">
       <p class="kicker">Proven in clinical use</p>
       <div class="trust-row">
@@ -302,7 +74,7 @@
   </section>
 
   <!-- ============ STATS ============ -->
-  <section class="section-tight" style="padding-top: 24px;">
+  <section class="section-tight fade-in" style="padding-top: 24px;">
     <div class="container">
       <div class="stat-row">
         <div class="stat">
@@ -329,20 +101,20 @@
           <span class="eyebrow">How it works</span>
           <h2 class="h2" style="margin-top:20px;">Three steps. One visit. Rapid recovery.</h2>
         </div>
-        <p class="lede">A single procedure under local or general anesthesia. Real-time imaging keeps the ablation precisely on the tumor — and off the tissue you want to preserve.</p>
+        <p class="lede">A single procedure under local or general anesthesia. Real time imaging keeps the ablation precisely on the tumor and off the tissue you want to preserve.</p>
       </div>
       <div class="mech-grid">
         <div class="mech-card">
           <span class="num-bg">01</span>
           <div class="step">Step one</div>
-          <h3 class="h3">Image-guided needle placement</h3>
+          <h3 class="h3">Image guided needle placement</h3>
           <p class="body">CT or ultrasound guidance places the ablation probe percutaneously, directly into the tumor — no open surgery, no wide-margin excision.</p>
         </div>
         <div class="mech-card">
           <span class="num-bg">02</span>
           <div class="step">Step two</div>
-          <h3 class="h3">Controlled freeze–thaw cycles</h3>
-          <p class="body">A patented four-layer probe delivers a focused −150 °C zone. Ice crystals disrupt cell membranes; surrounding tissue is held at a safe temperature.</p>
+          <h3 class="h3">Controlled freeze thaw cycles</h3>
+          <p class="body">A patented four-layer probe delivers a focused -150 °C zone. Ice crystals disrupt cell membranes; surrounding tissue is held at a safe temperature.</p>
         </div>
         <div class="mech-card">
           <span class="num-bg">03</span>
@@ -388,9 +160,9 @@
         </div>
         <div class="compare-row">
           <div class="lhs">Cost range*</div>
-          <div>$1,000 – $7,000+</div>
-          <div>$2,000 – $6,000+</div>
-          <div class="ours">$800 – $2,600</div>
+          <div>$1,000 - $7,000+</div>
+          <div>$2,000 - $6,000+</div>
+          <div class="ours">$800 - $2,600</div>
         </div>
       </div>
       <p class="kicker" style="text-align:center; margin-top: 20px;">* Indicative U.S. pricing. Final cost varies by case and partner practice.</p>
@@ -417,49 +189,23 @@
 </main>
 
 <!-- ============ FOOTER ============ -->
-<footer class="site-foot">
-  <div class="container">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a class="nav-logo" href="index.html">
-          <img src="assets/cryoknife-logo.png" alt="CryoKnife" />
-        </a>
-        <p>Image-guided cryoablation for veterinary oncology. Bringing a proven minimally invasive cancer therapy to companion animals in the United States.</p>
-      </div>
-      <div class="foot-col">
-        <h5>Site</h5>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h5>Inquiries</h5>
-        <ul>
-          <li><a href="contact.html">Veterinary</a></li>
-          <li><a href="contact.html">Investor</a></li>
-          <li><a href="contact.html">Press</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h5>Contact</h5>
-        <ul>
-          <li><a href="mailto:hello@cryoknife.com">hello@cryoknife.com</a></li>
-          <li><a href="contact.html">Request a demo →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-meta">
-      <span>© 2026 CryoKnife. All rights reserved.</span>
-      <span class="legal">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Clinical disclosures</a>
-      </span>
-    </div>
-  </div>
-</footer>
+<footer class="site-foot" id="footer"></footer>
+<script src="site/footer-loader.js"></script>
+
+<script>
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-in').forEach(function(el) {
+    observer.observe(el);
+  });
+</script>
 
 </body>
 </html>
